@@ -18,7 +18,24 @@
 			);
 			target = 900038072DD04EC1007FE90D /* PDFGenerater */;
 		};
+		9036FDE62DD1D09E009D4EE1 /* Exceptions for "CoreData" folder in "PDFGenerater" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PDFGenerater.xcdatamodeld,
+			);
+			target = 900038072DD04EC1007FE90D /* PDFGenerater */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		9036FDE72DD1D09E009D4EE1 /* Exceptions for "CoreData" folder in "Compile Sources" phase from "PDFGenerater" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 900038042DD04EC1007FE90D /* Sources */;
+			membershipExceptions = (
+				PDFGenerater.xcdatamodeld,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9000380A2DD04EC1007FE90D /* PDFGenerater */ = {
@@ -27,6 +44,25 @@
 				9000381D2DD04EC3007FE90D /* Exceptions for "PDFGenerater" folder in "PDFGenerater" target */,
 			);
 			path = PDFGenerater;
+			sourceTree = "<group>";
+		};
+		9036FDE42DD1D09E009D4EE1 /* CoreData */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9036FDE62DD1D09E009D4EE1 /* Exceptions for "CoreData" folder in "PDFGenerater" target */,
+				9036FDE72DD1D09E009D4EE1 /* Exceptions for "CoreData" folder in "Compile Sources" phase from "PDFGenerater" target */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9036FDE82DD1D0A7009D4EE1 /* Extensions */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9036FDEA2DD1D0AD009D4EE1 /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,8 +81,11 @@
 		900037FF2DD04EC1007FE90D = {
 			isa = PBXGroup;
 			children = (
-				9000380A2DD04EC1007FE90D /* PDFGenerater */,
+				9036FDEA2DD1D0AD009D4EE1 /* Resources */,
+				9036FDE82DD1D0A7009D4EE1 /* Extensions */,
+				9036FDE42DD1D09E009D4EE1 /* CoreData */,
 				900038092DD04EC1007FE90D /* Products */,
+				9000380A2DD04EC1007FE90D /* PDFGenerater */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +114,9 @@
 			);
 			fileSystemSynchronizedGroups = (
 				9000380A2DD04EC1007FE90D /* PDFGenerater */,
+				9036FDE42DD1D09E009D4EE1 /* CoreData */,
+				9036FDE82DD1D0A7009D4EE1 /* Extensions */,
+				9036FDEA2DD1D0AD009D4EE1 /* Resources */,
 			);
 			name = PDFGenerater;
 			packageProductDependencies = (
