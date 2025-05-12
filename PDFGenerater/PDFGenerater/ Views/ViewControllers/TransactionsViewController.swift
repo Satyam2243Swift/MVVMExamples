@@ -34,6 +34,8 @@ class TransactionsViewController: UIViewController {
         view.addSubview(activityIndicator)
         
         generatePDFButton.addTarget(self, action: #selector(generatePDFTapped), for: .touchUpInside)
+        generatePDFButton.layer.cornerRadius = 10
+        
     }
     
     private func registerXIB() {

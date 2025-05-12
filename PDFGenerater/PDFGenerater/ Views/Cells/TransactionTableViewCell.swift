@@ -4,8 +4,6 @@
 //
 //  Created by Satyam Dixit on 12/05/25.
 //
-
-
 import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
@@ -15,37 +13,45 @@ class TransactionTableViewCell: UITableViewCell {
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupCellStyle()
+        setupCardStyle()
     }
-    
-    private func setupCellStyle() {
-        containerView.layer.cornerRadius = 12
-        containerView.layer.shadowColor = UIColor.lightGray.cgColor
-        containerView.layer.shadowOpacity = 0.1
-        
-        statusView.layer.cornerRadius = 4
+
+    private func setupCardStyle() {
+        // Card style
+        containerView.layer.cornerRadius = 14
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = 0.4
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 6)
+        containerView.layer.shadowRadius = 4
+        containerView.backgroundColor = .white
+
+        // Rounded badge
+        statusView.layer.cornerRadius = 6
         statusView.clipsToBounds = true
     }
-    
+
     func configure(with transaction: Transaction) {
         dateLabel.text = transaction.date
         narrationLabel.text = transaction.narration
-        statusLabel.text = transaction.status
-        
-        switch transaction.status {
+        statusLabel.text = transaction.status.uppercased()
+
+        // Status Color
+        switch transaction.status.uppercased() {
         case "COMPLETED":
-            statusView.backgroundColor = .systemGreen.withAlphaComponent(0.2)
+            statusView.backgroundColor = UIColor.systemGreen.withAlphaComponent(0.3)
             statusLabel.textColor = .systemGreen
         case "PENDING":
-            statusView.backgroundColor = .systemOrange.withAlphaComponent(0.2)
+            statusView.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.3)
             statusLabel.textColor = .systemOrange
         default:
-            statusView.backgroundColor = .systemGray5
+            statusView.backgroundColor = UIColor.systemGray4
+            statusLabel.textColor = .darkGray
         }
-        
+
+        // Amount
         if let credit = transaction.credit, !credit.isEmpty {
             amountLabel.text = "+₹\(credit)"
             amountLabel.textColor = .systemGreen
@@ -53,7 +59,8 @@ class TransactionTableViewCell: UITableViewCell {
             amountLabel.text = "-₹\(debit)"
             amountLabel.textColor = .systemRed
         } else {
-            amountLabel.text = "N/A"
+            amountLabel.text = "₹0.00"
+            amountLabel.textColor = .gray
         }
     }
 }
